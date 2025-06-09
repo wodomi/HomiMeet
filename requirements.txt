@@ -4,3 +4,4 @@ flask-bcrypt
 flask-cors
 requests
 python-dotenv
+gunicorn
