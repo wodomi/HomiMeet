@@ -36,10 +36,10 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 def check_cloud_environment():
-    if os.getenv('ENV') == 'cloud':
-        # Cloud-specific configurations
+    env = os.getenv('ENV', 'cloud')  # Default to 'cloud' if not set
+    if env == 'cloud':
         print("Running in cloud environment: configure cloud settings.")
-    elif os.getenv('ENV') != 'local':
+    elif env != 'local':
         raise EnvironmentError("Invalid environment setup. Please check your configuration.")
 
 check_cloud_environment()
